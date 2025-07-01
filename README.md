@@ -1,6 +1,11 @@
 # 🧭 Pathfinding Visualizer - C++ & OpenGL
 
-A dy---
+A dynamic visual representation of Dijkstra's pathfinding algorithm implemented in C++ using OpenGL and FreeGLUT. This educational tool demonstrates how the algorithm explores nodes to find the shortest path between two points while avoiding obstacles.
+
+**Created by:** Anuj Tyagi  
+**Institution:** Indian Institute of Technology Guwahati  
+**Department:** Chemical Engineering  
+**Date:** July 31, 2025
 
 ## 🛠️ Tech Stack
 
@@ -20,133 +25,101 @@ A dy---
 
 ### Compilation
 ```bash
-g++ -o pathfinder.exe graph.cpp -I"freeglut/include" -L"freeglut/lib" -lfreeglut -lopengl32 -lglu32 -Wl,--subsystem,windows
+g++ -o pathfinder.exe graph.cpp -lfreeglut -lopengl32 -lglu32 -L./freeglut/lib -I./freeglut/include
 ```
 
-### Run
+### Running
 ```bash
 ./pathfinder.exe
 ```
 
 ---
 
-## 🔍 Algorithm Details
+## 🎮 Controls
 
-**Dijkstra's Algorithm Implementation:**
-- **Single-source shortest path** algorithm
-- **8-directional movement** (horizontal, vertical, diagonal)
-- **Distance weights**: 1.0 for H/V moves, 1.4 for diagonal moves
-- **Priority queue** for optimal node selection
-- **Real-time visualization** at 60 FPS
-- **Unreachable destination detection** with restart prompt
-
-### Algorithm Features:
-- ✅ **Guaranteed shortest path**
-- ✅ **Handles unreachable destinations**
-- ✅ **Interactive wall placement**
-- ✅ **Real-time step-by-step visualization**
-
----tive Pathfinding Visualizer that demonstrates how Dijkstra's algorithm works in real-time. Built using **C++** and **OpenGL**, this project lets users create custom grids, place start/end points, add walls, and watch the shortest path unfold step by step.
-
-**Created by Anuj Tyagi from IIT Guwahati, Department of Chemical Engineering**
-
-## 🚀 Features
-
-- 🟩 **Set Start & End Nodes**
-- 🧠 **Visualize Dijkstra's Algorithm**
-- 🎨 **Smooth OpenGL Rendering**
-- 🖱️ **Mouse & Keyboard Interactions**
-- 🔄 **Step-by-step Pathfinding Animation**
-- 🚧 **Interactive Wall Placement**
-- ⚠️ **Unreachable Destination Detection**
-- 🔄 **Easy Reset Functionality**nding Visualizer - C++ & OpenGL
-
-A dynamic, interactive Pathfinding Visualizer that demonstrates how Dijkstra's algorithm works in real-time. Built using **C++** and **OpenGL**, this project lets users create custom grids, place start/end points and watch the shortest path unfold step by step.
-
-## 🚀 Features
-
-- 🟩 **Set Start & End Nodes**
-- 🧠 **Visualize Dijkstra’s Algorithm**
-- 🎨 **Smooth OpenGL Rendering**
-- 🖱️ **Mouse & Keyboard Interactions**
-- 🔄 **Step-by-step Pathfinding Animation**
+| Key/Action | Function |
+|------------|----------|
+| **Enter** | Start from intro screen |
+| **Left Click** | Place source (1st), destination (2nd), then monsters |
+| **Right Click** | Remove nodes |
+| **S** | Start pathfinding visualization |
+| **R** | Reset/Restart |
+| **ESC** | Exit application |
 
 ---
 
-## 🎮 How to Use
+## 🎨 Visual Guide
 
-| Action | Mouse/Keyboard |
-|--------|----------------|
-| **Start Application** | Press `Enter` on intro screen |
-| **Place Source Node** | `Left Click` (first click) |
-| **Place Destination Node** | `Left Click` (second click) |
-| **Add Walls** | `Left Click` (after source & dest) |
-| **Remove Nodes** | `Right Click` |
-| **Start Pathfinding** | Press `S` or `s` |
-| **Reset Grid** | Press `R` or `r` |
-| **Quit Application** | Press `ESC` |
-
-### 🎯 Visual Guide
-- **🟣 Purple**: Source node
-- **🟪 Light Purple**: Destination node  
-- **🔴 Red with X**: Walls/obstacles
-- **🔵 Cyan**: Nodes being explored
-- **🟡 Yellow**: Final shortest path
-- **⚠️ Red Message**: "DESTINATION UNREACHABLE! Press 'R' to Restart"
+| Color | Node Type | Description |
+|-------|-----------|-------------|
+| 🟣 **Purple** | Source | Starting point |
+| 🟪 **Light Purple** | Destination | Target point |
+| 🟥 **Red + X** | Monsters| Obstacles |
+| 🟦 **Cyan** | Checked | Nodes explored by algorithm |
+| 🟨 **Yellow** | Path | Final shortest path |
 
 ---
 
-## 🛠️ Tech Stack
+## 🔧 Algorithm Details
 
-- **Language**: C++
-- **Graphics**: OpenGL & GLUT
-- **IDE/Compiler**: Visual Studio / g++ / Code::Blocks
+- **Algorithm**: Dijkstra's Shortest Path
+- **Movement**: 8-directional (horizontal, vertical, diagonal)
+- **Distance Weights**: 
+  - Horizontal/Vertical: 1.0
+  - Diagonal: 1.4 (√2)
+- **Visualization Speed**: 60 FPS
+- **Grid Size**: 40×40
 
 ---
 
-## 🔍 Algorithms
+## 📚 Educational Value
 
-Currently implemented:
-- ✅ **Dijkstra’s Algorithm** (Guaranteed shortest path)
-## 🎓 Educational Value
-
-This project demonstrates:
-- **Graph algorithms** in action
-- **Priority queue** data structures
-- **OpenGL graphics programming**
+This visualizer helps understand:
+- **Graph traversal algorithms**
+- **Priority queue data structures**
+- **Shortest path computation**
 - **Real-time algorithm visualization**
-- **Interactive application development**
-
-Perfect for:
-- 📚 **Computer Science students**
-- 🎯 **Algorithm learning**
-- 🎮 **Interactive demonstrations**
-- 💻 **OpenGL programming practice**
+- **OpenGL graphics programming**
 
 ---
 
-## 📁 Project Structure
+## 🏗️ Project Structure
 
 ```
-📦 OpenGL-Pathfinding-Visualizer/
-├── 📄 graph.cpp              # Main source code
-├── 📄 pathfinder.exe         # Compiled executable
-├── 📄 freeglut.dll          # Required library
-├── 📁 freeglut/             # FreeGLUT library files
-├── 📁 demo/                 # Demo screenshots/GIFs
-├── 📄 README.md             # Project documentation
-└── 📄 LICENSE               # MIT License
+OpenGL-Pathfinding-Visualizer/
+├── graph.cpp              # Main source code
+├── pathfinder.exe          # Compiled executable
+├── freeglut.dll           # Required DLL
+├── freeglut/              # FreeGLUT library
+├── README.md              # Documentation
+└── LICENSE                # License file
 ```
 
 ---
 
-## 🙌 Credits
+## 🎯 Features
 
-- **Developer**: Anuj Tyagi
-- **Institution**: Indian Institute of Technology Guwahati
-- **Department**: Chemical Engineering
-- **Graphics Library**: FreeGLUT and OpenGL
-- **Algorithm**: Edsger W. Dijkstra's shortest path algorithm
+- ✅ Real-time pathfinding visualization
+- ✅ Interactive node placement
+- ✅ Obstacle detection and avoidance
+- ✅ Unreachable destination detection
+- ✅ Clean, educational interface
+- ✅ Fullscreen visualization mode
 
+---
 
+## 📝 License
 
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+## 🙏 Acknowledgments
+
+- **FreeGLUT** for OpenGL utilities
+- **MinGW** for Windows compilation
+- **OpenGL** for graphics rendering
+
+---
+
+**Made with ❤️ for educational purposes**
