@@ -108,12 +108,6 @@ OpenGL-Pathfinding-Visualizer/
 
 ---
 
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
 ## 🙏 Acknowledgments
 
 - **FreeGLUT** for OpenGL utilities
